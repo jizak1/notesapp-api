@@ -1,0 +1,200 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* GLOBAL */
+.container {
+  max-width: 800px;
+  padding-block: 32px;
+  padding-inline: 16px;
+  margin-inline: auto;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+label {
+  display: block;
+}
+
+section > .title-section {
+  margin-block-end: 2rem;
+  font-size: 1.2em;
+}
+/* GLOBAL */
+
+/* Start of Header */
+header {
+  background-color: cornflowerblue;
+  color: beige;
+}
+
+.app-bar {
+  padding: 24px 20px;
+}
+
+.app-bar .brand-name {
+  margin: 0;
+  font-size: 1.7em;
+}
+/* End of Header */
+
+/* Start of Main */
+main {
+  min-height: 100vh;
+}
+
+/* Note List Container */
+.note-list-container {
+  margin-block-start: 32px;
+}
+
+.note-list .list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.note-list .list .card .note-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.note-list .list .card .note-info {
+  padding: 16px 24px;
+}
+
+.note-list .list .card .note-info__title h2 {
+  font-weight: lighter;
+}
+
+.note-list .list .card .note-info__description p {
+  display: -webkit-box;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  line-clamp: 5; /* number of lines to show */
+}
+
+.note-list-container .placeholder {
+  margin-block: 1rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.5);
+}
+/* End of Main */
+
+/* Start of Footer */
+footer {
+  background-color: cornflowerblue;
+  color: beige;
+}
+
+footer .container {
+  padding-block: 16px;
+}
+
+.main-footer {
+  padding: 8px 16px;
+  text-align: center;
+}
+
+.tab-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.tab {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: #57606f;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+}
+
+.tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #747d8c;
+}
+
+.empty-state img {
+  width: 200px;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+note-item {
+  margin: 1rem 0;
+  transition: transform 0.3s;
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #2ed573;
+  text-align: center;
+  padding: 2rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll-triggered animations */
+[data-scroll] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-scroll='in'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax effect */
+.note-card {
+  transition: transform 0.3s ease-out;
+}
+
+.note-card:hover {
+  transform: translateY(-5px) rotateZ(1deg);
+}
+/* End of Footer */
